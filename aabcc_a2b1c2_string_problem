@@ -1,0 +1,30 @@
+Q. Convert given string "aaaabbggeflllaab" to "a4b2g2e1f1l3a2b1".
+
+
+Ans.
+<?php
+
+$str = "aaaabbggeflllaab";
+
+$prev  = '';
+$count = "";
+$final = "";
+
+for($i=0;$i <  strlen($str);$i++){
+	
+  if($prev != $str[$i]){
+	  $final .= $prev.$count;
+		$count  = 1;
+			
+		$prev = $str[$i];	
+	}else{
+		$count++;	
+	}
+  
+}//for END
+
+$final .=$prev.$count;
+echo $final;
+die;
+
+//NOTE: There can be more optimised way to solve these problems please if you find one please share..!!
